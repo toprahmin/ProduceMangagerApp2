@@ -10,6 +10,9 @@ import javax.persistence.Id;
  */
 @Entity
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     private double wholesaleCost;
     private double units;
     private double unitCost;
@@ -19,9 +22,7 @@ public class Product {
     private double retailPrice;
     private String productDescription;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+
 
     public Product(){}
 
@@ -40,6 +41,8 @@ public class Product {
         this.productDescription = productDescription;
         this.wholesaleCost = wholesaleCost;
         this.units = units;
+        this.unitCost = calculateUnitCost();
+        this.retailPrice = calculateRetailPrice();
     };
 
     public Product(String productDescription, double wholesaleCost, double units, double productQuality){
@@ -48,6 +51,10 @@ public class Product {
         this.units = units;
         this.productQuality = productQuality;
     };
+
+    public long getId() {
+        return id;
+    }
 
     public String getProductDescription() {
         return productDescription;

@@ -1,0 +1,28 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>product</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="postProduct()">
+    <ion-item>
+      <ion-label>New Product</ion-label>
+      <ion-input type="text" [(ngModel)]="product.productDescription" name="product" placeholder="Enter Product"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Wholesale Cost</ion-label>
+      <ion-input type="number" [(ngModel)]="product.wholesaleCost" name="product" placeholder="Enter Wholesale Cost"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Units</ion-label>
+      <ion-input type="number" [(ngModel)]="product.units" name="product" placeholder="Enter Units"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" block>Add to Products</button>
+  </form>
+  <button ion-button color="secondary" (click)="viewAllProducts()">All Products</button>
+</ion-content>

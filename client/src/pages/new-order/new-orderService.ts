@@ -29,5 +29,5 @@ updateOrderItem(orderItem: any) : Observable<any>{
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this._http.put("http://localhost:8080/neworder/"+orderItem.id, JSON.stringify(orderItem), {headers:headers});
-}
+    }
 }

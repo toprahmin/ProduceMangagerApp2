@@ -9,9 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-/**
- * Created by rahmirford on 6/29/17.
- */
+
 
 @RequestMapping("/neworder")
 @RestController
