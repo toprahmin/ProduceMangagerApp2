@@ -26,31 +26,13 @@ public class Product {
 
     public Product(){}
 
-    public Product(double wholesaleCost, double units){
-        this.wholesaleCost = wholesaleCost;
-        this.units = units;
-    }
-
-    public Product(double wholesaleCost, double units, double percentMargin){
-        this.units=units;
-        this.wholesaleCost= wholesaleCost;
-        this.percentMargin = percentMargin;
-    }
 
     public Product(String productDescription, double wholesaleCost, double units){
         this.productDescription = productDescription;
         this.wholesaleCost = wholesaleCost;
         this.units = units;
-        this.unitCost = calculateUnitCost();
-        this.retailPrice = calculateRetailPrice();
     };
 
-    public Product(String productDescription, double wholesaleCost, double units, double productQuality){
-        this.productDescription = productDescription;
-        this.wholesaleCost = wholesaleCost;
-        this.units = units;
-        this.productQuality = productQuality;
-    };
 
     public long getId() {
         return id;
@@ -116,6 +98,10 @@ public class Product {
         return retailPrice;
     }
 
+    public void setRetailPrice(double retailPrice) { this.retailPrice = retailPrice; }
+
+    public void setProductQualityRatio(double ratio){ this.qualityPriceRatio = ratio;}
+
     public double calculateUnitCost(){
         unitCost = wholesaleCost / units;
         return unitCost;
@@ -123,7 +109,7 @@ public class Product {
 
 
     public double calculateRetailPrice(){
-        retailPrice =  (unitCost/(100 - percentMargin) * 100);
+        retailPrice =  (unitCost/(100 - 41) * 100);
         retailPrice = Math.round(retailPrice * 100)/100.0;
         return retailPrice;
     }

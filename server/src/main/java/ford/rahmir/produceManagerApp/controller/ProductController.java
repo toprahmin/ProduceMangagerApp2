@@ -3,7 +3,7 @@ package ford.rahmir.produceManagerApp.controller;
 import ford.rahmir.produceManagerApp.model.Product;
 import ford.rahmir.produceManagerApp.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
+import ford.rahmir.produceManagerApp.logic.ProductLogic;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +27,9 @@ public class ProductController {
 
     @RequestMapping(value = "/", method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
     public ResponseEntity<?> addProductToOrder(@RequestBody Product product){
+        ProductLogic productLogic = new ProductLogic(product);
+        productLogic.calculateRetailPrice(product);
+        productLogic.calculateUnitCost(product);
         product = productRepository.save(product);
         return new ResponseEntity<>(product,HttpStatus.CREATED);
     }
