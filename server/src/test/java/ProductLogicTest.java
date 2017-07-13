@@ -1,4 +1,4 @@
-import ford.rahmir.produceManagerApp.logic.ProductLogic;
+import ford.rahmir.produceManagerApp.service.ProductLogic;
 import ford.rahmir.produceManagerApp.model.Product;
 import org.junit.Assert;
 import org.junit.Before;
@@ -18,7 +18,7 @@ public class ProductLogicTest {
     @Test
     public void calculateRetailPriceTest(){
         //: Given
-        double expected = 6.04;
+        double expected = 6.06;
         //: When
         productlogic.calculateRetailPrice(strawberries);
         double actual = strawberries.getRetailPrice();

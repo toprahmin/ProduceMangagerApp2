@@ -7,13 +7,10 @@ import {Injectable} from '@angular/core';
 export class NewOrderService{
     constructor(private _http: Http){}
 
-    
-
 getAllOrderItems(): Observable<any>{
     return this._http.get("http://localhost:8080/neworder/")
     .map(res => res.json());
     }
-
 
 postOrderItem(orderItem: any): Observable<any>{
     let headers = new Headers();

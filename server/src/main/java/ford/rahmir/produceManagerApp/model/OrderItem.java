@@ -1,9 +1,7 @@
 package ford.rahmir.produceManagerApp.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.LocalDate;
 
 
 /**
@@ -14,9 +12,14 @@ public class OrderItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ORDER_ITEM_ID")
     private long id;
+    @Column(name = "PROD_DESC")
     private String productDescription;
+    @Column(name = "PRODUCT_QUANTITY  ")
     private double quantity;
+    //private LocalDate orderDate = LocalDate.now();
+
 
     public OrderItem(){}
 
@@ -24,6 +27,11 @@ public class OrderItem {
         this.productDescription = productDescription;
         this.quantity = quantity;
     }
+//
+//    public LocalDate getOrderDate(){
+//        return orderDate;
+//    }
+
 
     public String getProductDescription() {
         return productDescription;
@@ -41,9 +49,7 @@ public class OrderItem {
         this.quantity = quantity;
     }
 
-    public long getId() {
-        return id;
-    }
+    public long getId() {return id;}
 
     public void setId(long id) {
         this.id = id;

@@ -1,9 +1,7 @@
 package ford.rahmir.produceManagerApp.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 /**
  * Created by rahmirford on 6/23/17.
  */
@@ -12,21 +10,27 @@ import javax.persistence.Id;
 public class Vendor {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "VENDOR_ID")
     private int id;
+    @Column(name = "Company_Name")
     private String companyName;
+    @Column(name = "EMAIL")
     private String email;
+    @Column(name = "PRIMARY_CONTACT")
     private String primaryContact;
+    @Column(name = "ADDRESS")
     private String Address;
+    @Column(name = "PHONENUMBER")
     private String phoneNumber;
 
 
+    public Vendor(){}
 
-    public Vendor(String companyName, String email) {
+    public Vendor(String companyName, String email, String primaryContact) {
         this.companyName = companyName;
         this.email = email;
+        this.primaryContact = primaryContact;
     }
-
-    public Vendor(){}
 
     public int getId() {
         return id;

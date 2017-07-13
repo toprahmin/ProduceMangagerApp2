@@ -1,36 +1,48 @@
 package ford.rahmir.produceManagerApp.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 
 /**
  * Created by rahmirford on 6/24/17.
  */
 @Entity
+@Table
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="PRODUCT_ID")
     private long id;
+    @Column(name="WHOLESALE_COST")
     private double wholesaleCost;
+    @Column(name="UNITS")
     private double units;
+    @Column(name = "UNIT_COST")
     private double unitCost;
+    @Column(name = "MARGIN")
     private double percentMargin;
+    @Column(name = "QUALITY_PRICE_RATIO")
     private double qualityPriceRatio;
+    @Column(name = "QUALITY")
     private double productQuality;
+    @Column(name = "RETAIL_PRICE")
     private double retailPrice;
+    @Column(name = "PROD_DESC")
     private String productDescription;
+    @Column(name = "Prod_Vendor")
+    private Vendor productVendor;
 
 
 
     public Product(){}
 
 
-    public Product(String productDescription, double wholesaleCost, double units){
+    public Product(String productDescription, double wholesaleCost, double units, Vendor productVendor){
         this.productDescription = productDescription;
         this.wholesaleCost = wholesaleCost;
         this.units = units;
+        this.productVendor = productVendor;
     };
 
 
@@ -102,23 +114,9 @@ public class Product {
 
     public void setProductQualityRatio(double ratio){ this.qualityPriceRatio = ratio;}
 
-    public double calculateUnitCost(){
-        unitCost = wholesaleCost / units;
-        return unitCost;
-    }
+    public Vendor getProductVendor(){return productVendor;}
 
+    public void setProductVendor(Vendor productVendor){this.productVendor = productVendor;}
 
-    public double calculateRetailPrice(){
-        retailPrice =  (unitCost/(100 - 41) * 100);
-        retailPrice = Math.round(retailPrice * 100)/100.0;
-        return retailPrice;
-    }
-
-    public double calculateQualityPriceRatio(){
-
-        qualityPriceRatio = productQuality/ unitCost;
-        qualityPriceRatio = Math.round(qualityPriceRatio * 100)/100.0;
-        return qualityPriceRatio;
-    }
 
 }

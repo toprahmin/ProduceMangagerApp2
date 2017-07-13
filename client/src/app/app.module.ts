@@ -9,6 +9,7 @@ import { NewOrderPage } from '../pages/new-order/new-order';
 import { OrderReviewPage} from "../pages/order-review/order-review";
 import {ProductPage} from "../pages/product/product";
 import {AllProductsPage} from "../pages/all-products/all-products";
+import {VendorPage} from "../pages/vendor/vendor";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -20,7 +21,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     NewOrderPage,
     OrderReviewPage,
     ProductPage,
-    AllProductsPage
+    AllProductsPage,
+    VendorPage
 
   ],
   imports: [
@@ -34,7 +36,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     NewOrderPage,
     OrderReviewPage,
     ProductPage,
-    AllProductsPage
+    AllProductsPage,
+    VendorPage
   ],
   providers: [
     StatusBar,

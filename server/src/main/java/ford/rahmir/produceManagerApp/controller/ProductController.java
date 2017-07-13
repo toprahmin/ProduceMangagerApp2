@@ -3,7 +3,7 @@ package ford.rahmir.produceManagerApp.controller;
 import ford.rahmir.produceManagerApp.model.Product;
 import ford.rahmir.produceManagerApp.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import ford.rahmir.produceManagerApp.logic.ProductLogic;
+import ford.rahmir.produceManagerApp.service.ProductLogic;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
