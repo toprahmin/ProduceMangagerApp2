@@ -30,19 +30,15 @@ public class Product {
     private double retailPrice;
     @Column(name = "PROD_DESC")
     private String productDescription;
-    @Column(name = "Prod_Vendor")
-    private Vendor productVendor;
-
 
 
     public Product(){}
 
 
-    public Product(String productDescription, double wholesaleCost, double units, Vendor productVendor){
+    public Product(String productDescription, double wholesaleCost, double units){
         this.productDescription = productDescription;
         this.wholesaleCost = wholesaleCost;
         this.units = units;
-        this.productVendor = productVendor;
     };
 
 
@@ -114,9 +110,6 @@ public class Product {
 
     public void setProductQualityRatio(double ratio){ this.qualityPriceRatio = ratio;}
 
-    public Vendor getProductVendor(){return productVendor;}
-
-    public void setProductVendor(Vendor productVendor){this.productVendor = productVendor;}
 
 
 }

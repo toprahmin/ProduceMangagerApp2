@@ -10,6 +10,7 @@ import { OrderReviewPage} from "../pages/order-review/order-review";
 import {ProductPage} from "../pages/product/product";
 import {AllProductsPage} from "../pages/all-products/all-products";
 import {VendorPage} from "../pages/vendor/vendor";
+import { AllVendorsPage } from "../pages/all-vendors/all-vendors"; 
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,6 +24,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ProductPage,
     AllProductsPage,
     VendorPage
+   // AllVendorsPage
 
   ],
   imports: [
@@ -38,6 +40,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ProductPage,
     AllProductsPage,
     VendorPage
+   // AllVendorsPage
   ],
   providers: [
     StatusBar,

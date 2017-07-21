@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
-import {ProductService} from '../product/productservice';
+import {ProductService} from '../../services/productservice';
 import {AllProductsPage} from '../all-products/all-products';
 
 /**

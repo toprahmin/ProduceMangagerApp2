@@ -11,7 +11,7 @@ public class ProductLogicTest {
 
     @Before
     public void setUp(){
-        strawberries = new Product("Strawberries", 28.50, 8);
+        //strawberries = new Product("Strawberries", 28.50, 8);
         productlogic = new ProductLogic(strawberries);
     }
 
