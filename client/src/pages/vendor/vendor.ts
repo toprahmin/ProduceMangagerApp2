@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Http} from '@angular/http';
-import {VendorService} from '../../services/vendorservice';
+import {VendorService} from '../../services/vendorService';
+import {AllVendorsPage} from '../all-vendors/all-vendors';
 
 
 
@@ -29,6 +30,10 @@ export class VendorPage {
 
   goToVendors(){
     this.navCtrl.push(VendorPage);
+  }
+
+  goToAllVendors(){
+    this.navCtrl.push(AllVendorsPage);
   }
 
 }

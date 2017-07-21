@@ -6,11 +6,13 @@ import {HttpModule} from '@angular/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { NewOrderPage } from '../pages/new-order/new-order';
-import { OrderReviewPage} from "../pages/order-review/order-review";
-import {ProductPage} from "../pages/product/product";
-import {AllProductsPage} from "../pages/all-products/all-products";
-import {VendorPage} from "../pages/vendor/vendor";
+import { OrderReviewPage } from "../pages/order-review/order-review";
+import { ProductPage } from "../pages/product/product";
+import { AllProductsPage } from "../pages/all-products/all-products";
+import { VendorPage } from "../pages/vendor/vendor";
 import { AllVendorsPage } from "../pages/all-vendors/all-vendors"; 
+import { VendorService } from "../services/vendorService";
+import { ProductService } from "../services/productservice";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,8 +25,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     OrderReviewPage,
     ProductPage,
     AllProductsPage,
-    VendorPage
-   // AllVendorsPage
+    VendorPage,
+   AllVendorsPage
 
   ],
   imports: [
@@ -39,13 +41,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     OrderReviewPage,
     ProductPage,
     AllProductsPage,
-    VendorPage
-   // AllVendorsPage
+    VendorPage,
+    AllVendorsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+     VendorService, 
+     ProductService
   ]
 })
 export class AppModule {}

@@ -27,8 +27,8 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'New Order', component: NewOrderPage },
       { title: 'New Product', component: ProductPage},
-      { title: 'Products', component: AllProductsPage}
-     // { title: 'Vendors', component: AllVendorsPage}
+      { title: 'Products', component: AllProductsPage},
+      { title: 'Vendors', component: AllVendorsPage}
     ];
 
   }

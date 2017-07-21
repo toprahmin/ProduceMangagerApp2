@@ -14,5 +14,15 @@
 
 
 <ion-content padding>
+  <ion-list>
+  <ion-item *ngFor="let vendor of vendors">
+    <ion-thumbnail item-start>
+      <img>
+    </ion-thumbnail>
+    <h2>{{vendor.companyName}}</h2>
+    <p>{{vendor.primaryContact}}</p>
+    <button ion-button clear item-end>View</button>
+  </ion-item>
+</ion-list>
 
 </ion-content>
