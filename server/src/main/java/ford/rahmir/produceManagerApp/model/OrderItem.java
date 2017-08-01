@@ -18,7 +18,7 @@ public class OrderItem {
     private String productDescription;
     @Column(name = "PRODUCT_QUANTITY  ")
     private double quantity;
-    //private LocalDate orderDate = LocalDate.now();
+    private String orderDate = LocalDate.now().toString();
 
 
     public OrderItem(){}
@@ -27,11 +27,11 @@ public class OrderItem {
         this.productDescription = productDescription;
         this.quantity = quantity;
     }
-//
-//    public LocalDate getOrderDate(){
-//        return orderDate;
-//    }
 
+
+    public void setOrderDate(String orderDate){ this.orderDate = orderDate;}
+
+    public String getOrderDate() {return orderDate;}
 
     public String getProductDescription() {
         return productDescription;

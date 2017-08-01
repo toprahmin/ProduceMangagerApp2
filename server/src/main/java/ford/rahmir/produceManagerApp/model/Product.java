@@ -6,8 +6,9 @@ import javax.persistence.*;
 /**
  * Created by rahmirford on 6/24/17.
  */
-@Entity
-@Table
+@Entity(name = "Product")
+@Table(name = "tb_Product")
+
 public class Product {
 
     @Id

@@ -15,22 +15,19 @@ public class ProductLogic {
 
     public void calculateRetailPrice(Product product){
         double retailValue;
-        retailValue = ((product.getWholesaleCost()/product.getUnits())/(100-41.18) * 100);
-        retailValue = round(retailValue);
+        retailValue = round(((product.getWholesaleCost()/product.getUnits())/(100-41.18) * 100));
         product.setRetailPrice(retailValue);
     }
 
     public void calculateUnitCost(Product product){
         double productUnitCost;
-        productUnitCost = product.getWholesaleCost()/product.getUnits();
-        productUnitCost = round(productUnitCost);
+        productUnitCost = round(product.getWholesaleCost()/product.getUnits());
         product.setUnitCost(productUnitCost);
     }
 
     public void calculateQualityPriceRatio(Product product){
         double qualityToPriceRatio;
-        qualityToPriceRatio = product.getProductQuality()/product.getUnitCost();
-        qualityToPriceRatio = round(qualityToPriceRatio);
+        qualityToPriceRatio = round(product.getProductQuality()/product.getUnitCost());
         product.setProductQualityRatio(qualityToPriceRatio);
     }
 
