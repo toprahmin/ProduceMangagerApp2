@@ -16,11 +16,11 @@
 <ion-content padding>
   <ion-list>
     <ion-item *ngFor="let product of products">
-      <div>{{product.productDescription}}</div>
-      <div>{{product.wholesaleCost}}</div>
+      <div>{{product.productDescription}}
+      <!--<div>{{product.wholesaleCost}}</div>
       <div>{{product.units}}</div>
-      <div>{{product.retailPrice}}</div>
-      <button ion-button="danger" (click)="deleteProduct(product.id)">Delete</button>
+      <div>{{product.retailPrice}}</div>-->
+      <button right ion-button="danger" (click)="deleteProduct(product.id)">Delete</button></div>
     </ion-item>
   </ion-list>
 

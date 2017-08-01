@@ -13,6 +13,7 @@ import { VendorPage } from "../pages/vendor/vendor";
 import { AllVendorsPage } from "../pages/all-vendors/all-vendors"; 
 import { VendorService } from "../services/vendorService";
 import { ProductService } from "../services/productservice";
+import { EmailSuccessPage} from "../pages/email-success/email-success";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,7 +27,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ProductPage,
     AllProductsPage,
     VendorPage,
-   AllVendorsPage
+    AllVendorsPage,
+    EmailSuccessPage
 
   ],
   imports: [
@@ -42,7 +44,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ProductPage,
     AllProductsPage,
     VendorPage,
-    AllVendorsPage
+    AllVendorsPage,
+    EmailSuccessPage
   ],
   providers: [
     StatusBar,

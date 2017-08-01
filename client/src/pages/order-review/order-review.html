@@ -13,10 +13,11 @@
     <ion-item *ngFor="let orderItem of orderItems">
       <div>{{orderItem.productDescription}}</div>
       <div>{{orderItem.quantity}}</div>
-      <div>{{orderItem.orderDate}}</div>
+      <!--<div>{{orderItem.orderDate}}</div>-->
       <button ion-button color="danger" (click) = "deleteOrderItem(orderItem.id)">Delete</button>
       <button ion-button color="secondary" (click)= "editQuantity(orderItem)">Edit</button>
     </ion-item>
   </ion-list>
 
+<button ion-button block (click)="goToEmailSuccess()">Confirm & Send</button>
 </ion-content>
