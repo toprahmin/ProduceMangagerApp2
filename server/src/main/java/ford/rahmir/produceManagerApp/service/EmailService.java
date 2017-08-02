@@ -1,11 +1,15 @@
 package ford.rahmir.produceManagerApp.service;
 
+import ford.rahmir.produceManagerApp.model.OrderItem;
 import ford.rahmir.produceManagerApp.model.Product;
+import ford.rahmir.produceManagerApp.repository.ProductOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 
 @Service
 public class EmailService {
@@ -17,13 +21,29 @@ public class EmailService {
         this.javaMailSender = javaMailSender;
     }
 
-    public void SendEmail(Product product) throws MailException{
-        SimpleMailMessage mail = new SimpleMailMessage();
+    @Autowired
+    private ProductOrderRepository productOrderRepository;
 
-        mail.setTo("xxxxxxxx@gmail.com");
+
+
+
+    public String productsToOrder(){
+        ArrayList<OrderItem> products = (ArrayList<OrderItem>) productOrderRepository.findAll();
+        StringBuilder order = new StringBuilder();
+        order.append("We would like to order: \n");
+        for(OrderItem product: products){
+            order.append("\n" + product.getProductDescription() + "      " + product.getQuantity() );
+        }
+        return order.toString();
+    }
+
+    public void SendEmail() throws MailException{
+
+        SimpleMailMessage mail = new SimpleMailMessage();
+        mail.setTo("xxxxxxxxxx@gmail.com");
         mail.setFrom("xxxxxxxxx@gmail.com");
         mail.setSubject("Test Email");
-        mail.setText("Test email to see if app works");
+        mail.setText(productsToOrder());
 
         javaMailSender.send(mail);
 

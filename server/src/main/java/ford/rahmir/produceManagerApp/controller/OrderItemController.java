@@ -34,7 +34,6 @@ public class OrderItemController {
 
     @RequestMapping(value = "/", method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
     public ResponseEntity<?> addProductToOrder(@RequestBody OrderItem orderItem){
-        //orderItem.setOrderDate(orderItem.getOrderDate());
         orderItem = productOrderRepository.save(orderItem);
         return new ResponseEntity<>(orderItem,HttpStatus.CREATED);
     }

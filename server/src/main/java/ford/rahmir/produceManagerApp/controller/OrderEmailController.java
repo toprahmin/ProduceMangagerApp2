@@ -19,10 +19,8 @@ public class OrderEmailController {
 
     @RequestMapping("/email-confirmed")
     public void orderConfirmed() {
-        Product product = new Product("Strawberries", 31.50, 8);
-
         try {
-            emailService.SendEmail(product);
+            emailService.SendEmail();
         } catch (MailException e) {
 
         }
