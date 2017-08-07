@@ -1,3 +1,4 @@
+import { EmailService } from './../../Services/emailService';
 import { EmailSuccessPage } from './../email-success/email-success';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
@@ -6,16 +7,17 @@ import { NewOrderService} from '../new-order/new-orderService';
 
 
 
+
 @Component({
   selector: 'page-order-review',
   templateUrl: 'order-review.html',
-  providers: [NewOrderService]
+  providers: [NewOrderService, EmailService]
 })
 export class OrderReviewPage {
 
   orderItems: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public newOrderService:NewOrderService, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public newOrderService:NewOrderService, public alertCtrl: AlertController,public emailService: EmailService) {
     newOrderService.getAllOrderItems().subscribe(data => {
       this.orderItems = data;
     })
@@ -64,8 +66,8 @@ export class OrderReviewPage {
     prompt.present();
   }
 
- 
   goToEmailSuccess(){
+    this.emailService.getEmail();
     this.navCtrl.push(EmailSuccessPage);
   }
 

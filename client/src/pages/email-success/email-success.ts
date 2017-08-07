@@ -1,3 +1,4 @@
+import { EmailService } from './../../Services/emailService';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -11,14 +12,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'page-email-success',
   templateUrl: 'email-success.html',
+  providers: [EmailService]
 })
 export class EmailSuccessPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams, public emailService:EmailService) {
+    emailService.getEmail();
+}
 
   goToHome(){
     this.navCtrl.popToRoot();
+  }
+
+  getEmail(){
+    this.emailService.getEmail();
   }
 
   ionViewDidLoad() {
